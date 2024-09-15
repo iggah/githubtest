@@ -1,0 +1,148 @@
+style.css
+:root {
+    --primary: #0969DA;
+    --background : #24292F;
+    --gray: #847F90;
+    --WHITE: #FCFCFC;
+    --navbar-height: 3.75rem;
+}
+
+body {
+    front-family: "Red Hat Display",
+        sans-serif;
+    front-size: 16px;    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.menu__wrapper {
+    display: flex;
+    position: fixed;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+    z-index: 2;
+    gap: 1.5rem;
+    background: var(--background);
+    height: var(--background);
+    padding: 0 1rem;
+    align-items: center;
+}
+
+.menu__bar {
+     display: flex;
+     gap: 1.5rem;
+     align-items: center;
+}
+
+.logo {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+.logo svg {
+    fill: var(--WHITE);
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--background);
+}
+
+.navigation > li {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    align-items: center;
+    height: 2.625rem;
+}
+
+.navigation > li > button > svg {
+    fill: var(--WHITE);
+    color: var(--WHITE);
+    transition: all 0.2s ease-in-out;
+}
+
+.navigation > li > a {
+    color: var(--WHITE);
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.navigation > li > button {
+    color: var(--WHITE);
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    gap: 0.25rem;
+    opacity: 1;
+    align-items: center;
+    font-size: 0.875rem;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    background: none;
+    display: flex;
+    padding: 0.185rem 0;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+.dropdown {
+    position: absolute;
+    top: 2.625rem;
+    min-width: 15rem;
+    border-radius: 0.5rem;
+    background: var(--WHITE);
+    display: none;
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: 0.5px 0.3px 
+    rgba(27, 31, 35, 0.1), 0 0 1px rgba(27, 31, 35, 0.4), 
+    0 1px 2px rgba(27, 31, 35, 0.15);
+    z-index: 2;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.99);
+            translateY(-0.7em);
+        transform-origin: top;
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+            translateY(0) ;
+    }
+}
+
+.dropdown h3 {
+    front-size: 0.875rem;
+    front-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.list-menu-items {
+    display: flex;
+    list-style-type: none;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.list-menu-items > li > a:hover {
+    color: var(--primary);
+}
